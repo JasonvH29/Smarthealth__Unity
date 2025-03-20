@@ -33,4 +33,5 @@ public class PanelController : MonoBehaviour
         backBtn.gameObject.SetActive(true); // Show Scene2 Back Button
     }
 }
-//werkt het???
+// Werkt het??? 
+// Het werkt!
