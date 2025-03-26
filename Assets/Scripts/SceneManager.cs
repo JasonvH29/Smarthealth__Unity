@@ -4,44 +4,59 @@ using UnityEngine.UI;
 
 public class SceneSwitcher : MonoBehaviour
 {
-    public Button startButton;   // Start button in Scene1
-    public Button backButton;    // Back button in Scene2 en Scene3
-    public Button avontuurButton; // Avontuur 1 knop in Scene2
+    public Button startButton;
+    public Button backButton;
+    public Button avontuurButton;
+    public Button VoorTrajectKeuze;
 
     void Start()
     {
         string currentScene = SceneManager.GetActiveScene().name;
-        Debug.Log("Huidige Scene: " + currentScene); // Debug-log om te controleren waar we zijn
+        Debug.Log("Huidige Scene: " + currentScene);
 
-        if (currentScene == "Scene1" && startButton != null)
+        if (currentScene == "StartMenu" && startButton != null)
         {
-            startButton.onClick.AddListener(() => LoadScene("Scene2"));
-            Debug.Log("Startknop gekoppeld aan Scene2.");
+            startButton.onClick.AddListener(() => LoadScene("TrajectMenu"));
+            Debug.Log("Startknop gekoppeld aan TrajectMenu.");
         }
-        else if (currentScene == "Scene2")
+        else if (currentScene == "TrajectMenu")
         {
             if (backButton != null)
             {
-                backButton.onClick.AddListener(() => LoadScene("Scene1"));
-                Debug.Log("Terugknop gekoppeld aan Scene1.");
+                backButton.onClick.AddListener(() => LoadScene("StartMenu"));
+                Debug.Log("Terugknop gekoppeld aan StartMenu.");
+            }
+
+            if (VoorTrajectKeuze != null)
+            {
+                VoorTrajectKeuze.onClick.AddListener(() => LoadScene("VoorTrajectMap"));
+                Debug.Log("VoorTrajectKeuze knop gekoppeld aan VoorTrajectKeuze.");
+            }
+        }
+        else if (currentScene == "VoorTrajectMap")
+        {
+            if (backButton != null)
+            {
+                backButton.onClick.AddListener(() => LoadScene("TrajectMenu"));
+                Debug.Log("Terugknop gekoppeld aan TrajectMenu.");
             }
 
             if (avontuurButton != null)
             {
-                avontuurButton.onClick.AddListener(() => LoadScene("Scene3"));
-                Debug.Log("Avontuur 1 knop gekoppeld aan Scene3.");
+                avontuurButton.onClick.AddListener(() => LoadScene("VoorTrajectAvontuur1"));
+                Debug.Log("Avontuur 1 knop gekoppeld aan VoorTrajectAvontuur1.");
             }
         }
-        else if (currentScene == "Scene3" && backButton != null)
+        else if (currentScene == "VoorTrajectAvontuur1" && backButton != null)
         {
-            backButton.onClick.AddListener(() => LoadScene("Scene2"));
-            Debug.Log("Terugknop gekoppeld aan Scene2.");
+            backButton.onClick.AddListener(() => LoadScene("VoorTrajectMap"));
+            Debug.Log("Terugknop gekoppeld aan VoorTrajectMap.");
         }
     }
 
     void LoadScene(string sceneName)
     {
-        Debug.Log("Laden van scene: " + sceneName); // Extra debug-info
+        Debug.Log("Laden van scene: " + sceneName);
         SceneManager.LoadScene(sceneName);
     }
 }
