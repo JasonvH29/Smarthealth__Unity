@@ -2,7 +2,6 @@ using System.Collections;
 using UnityEngine.Networking;
 using UnityEngine;
 using UnityEngine.UI;
-using Unity.AspNet.WebApi;
 using SimpleJSON;
 
 public class APIservice : MonoBehaviour
