@@ -1,9 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using System.Diagnostics;
-using System.Text;
-using System;
+using UnityEngine.Video;
 
 public class PanelController : MonoBehaviour
 {
@@ -12,30 +9,31 @@ public class PanelController : MonoBehaviour
     public Button backBtn; // Scene's Back button (outside the panel)
     public Button nextBtn; // Next button (outside the panel)
     public Button back2; // Back button INSIDE the panel
-    public TextMeshProUGUI videoDescription; // TMP text inside the panel
+    public Button doneBtn; // Done button (hidden initially)
+    public Button playBtn;  // Play button
+    public Button pauseBtn; // Pause button
+
+    public VideoPlayer videoPlayer; // Reference to VideoPlayer component
 
     void Start()
     {
-        // Make sure everything is in the correct initial state
         panel.SetActive(false);
         back2.gameObject.SetActive(false);
         btn1.gameObject.SetActive(true);
         nextBtn.gameObject.SetActive(true);
         backBtn.gameObject.SetActive(true);
+        doneBtn.gameObject.SetActive(false);
 
-        // Add event listeners to buttons
+        playBtn.gameObject.SetActive(false); // Hide Play button initially
+        pauseBtn.gameObject.SetActive(false); // Hide Pause button initially
+
         btn1.onClick.AddListener(ShowPanel);
         back2.onClick.AddListener(HidePanel);
+        doneBtn.onClick.AddListener(OnDoneClick);
+        playBtn.onClick.AddListener(PlayVideo);
+        pauseBtn.onClick.AddListener(PauseVideo);
 
-        // Add TTS trigger when clicking on text
-        if (videoDescription != null)
-        {
-            videoDescription.GetComponent<Button>().onClick.AddListener(() => SpeakText(videoDescription.text));
-        }
-        else
-        {
-            UnityEngine.Debug.LogError("videoDescription is not assigned!");
-        }
+        videoPlayer.loopPointReached += VideoEnded;
     }
 
     void ShowPanel()
@@ -44,10 +42,11 @@ public class PanelController : MonoBehaviour
         btn1.gameObject.SetActive(false);
         nextBtn.gameObject.SetActive(false);
         backBtn.gameObject.SetActive(false);
-
         back2.gameObject.SetActive(true);
 
-        videoDescription.text = "This is a video about learning with Amando.";
+        videoPlayer.Play();
+        playBtn.gameObject.SetActive(false);
+        pauseBtn.gameObject.SetActive(true); // Show Pause button
     }
 
     void HidePanel()
@@ -57,32 +56,46 @@ public class PanelController : MonoBehaviour
         btn1.gameObject.SetActive(true);
         nextBtn.gameObject.SetActive(true);
         backBtn.gameObject.SetActive(true);
+
+        doneBtn.gameObject.SetActive(false);
+        playBtn.gameObject.SetActive(false);
+        pauseBtn.gameObject.SetActive(false);
     }
 
-    void SpeakText(string text)
+    void VideoEnded(VideoPlayer vp)
     {
-        if (string.IsNullOrEmpty(text)) return;
+        doneBtn.gameObject.SetActive(true);
+        playBtn.gameObject.SetActive(true); // Show Play button to restart video
+        pauseBtn.gameObject.SetActive(false);
+    }
 
-        // Convert text to UTF-8
-        byte[] bytes = Encoding.UTF8.GetBytes(text);
-        string utf8Text = Encoding.UTF8.GetString(bytes);
-
-        // Use CHCP 65001 for UTF-8 support
-        string command = $"chcp 65001 > nul && espeak \"{utf8Text}\"";
-
-        ProcessStartInfo psi = new ProcessStartInfo
+    void OnDoneClick()
+    {
+        HidePanel();
+        TypewriterEffect typewriter = FindObjectOfType<TypewriterEffect>();
+        if (typewriter != null)
         {
-            FileName = "cmd.exe",
-            Arguments = $"/c {command}",
-            RedirectStandardOutput = true,
-            RedirectStandardError = true,
-            UseShellExecute = false,
-            CreateNoWindow = true
-        };
+            typewriter.ShowVideoCompletionText();
+        }
 
-        Process process = new Process { StartInfo = psi };
-        process.Start();
+        PlayAudioOnStart audioManager = FindObjectOfType<PlayAudioOnStart>();
+        if (audioManager != null)
+        {
+            audioManager.PlayThirdAudio();
+        }
+    }
+
+    void PlayVideo()
+    {
+        videoPlayer.Play();
+        playBtn.gameObject.SetActive(false);
+        pauseBtn.gameObject.SetActive(true);
+    }
+
+    void PauseVideo()
+    {
+        videoPlayer.Pause();
+        playBtn.gameObject.SetActive(true);
+        pauseBtn.gameObject.SetActive(false);
     }
 }
-// Werkt het??? 
-// Het werkt!

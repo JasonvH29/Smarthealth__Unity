@@ -201,7 +201,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 69126198}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8300000, guid: 2c89ce359bbc6ef4887bdfa95e52973c, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &69126198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,6 +422,7 @@ MonoBehaviour:
   startButton: {fileID: 874369014}
   backButton: {fileID: 0}
   avontuurButton: {fileID: 0}
+  VoorTrajectKeuze: {fileID: 0}
 --- !u!1 &674108591
 GameObject:
   m_ObjectHideFlags: 0
