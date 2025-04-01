@@ -29,17 +29,23 @@ public class TypewriterEffect : MonoBehaviour
     private bool hasClosedBeforeVideo = false; // Track if the bubble was closed before the video
     private Coroutine activeTypingCoroutine = null; // Store active typewriter coroutine
 
+    private string textComponent3FullText; // Store the full text for textComponent3
+
     void Start()
     {
         playBtn.gameObject.SetActive(true);
         pauseBtn.gameObject.SetActive(false);
 
-        textComponent1.text = "";
-        textComponent2.text = "";
-        textComponent3.text = "";
         speechBubble.SetActive(false);
         closeButton.gameObject.SetActive(false);
         clickHereButton.gameObject.SetActive(true);
+
+        textComponent1.gameObject.SetActive(false);
+        textComponent2.gameObject.SetActive(false);
+        textComponent3.gameObject.SetActive(false);
+
+        // Store the full text for textComponent3
+        textComponent3FullText = textComponent3.text;
 
         StartCoroutine(AnimateButton());
         StartCoroutine(PlayTextSequence());
@@ -49,24 +55,27 @@ public class TypewriterEffect : MonoBehaviour
     {
         speechBubble.SetActive(true);
 
-        activeTypingCoroutine = StartCoroutine(TypeText(textComponent1, "Oh nee! Het ziet eruit alsof jouw keel pijn doet! Wees gerust, want wij gaan op een avontuur samen!"));
+        textComponent1.gameObject.SetActive(true);
+        activeTypingCoroutine = StartCoroutine(TypeText(textComponent1));
         yield return activeTypingCoroutine;
         yield return new WaitForSeconds(3f);
-        textComponent1.text = "";
+        textComponent1.gameObject.SetActive(false); // Hide textComponent1
 
-        activeTypingCoroutine = StartCoroutine(TypeText(textComponent2, "Druk op de blauwe knop om het begin van jouw avontuur te starten!"));
+        textComponent2.gameObject.SetActive(true);
+        activeTypingCoroutine = StartCoroutine(TypeText(textComponent2));
         yield return activeTypingCoroutine;
         yield return new WaitForSeconds(3f);
 
         closeButton.gameObject.SetActive(true);
     }
 
-    IEnumerator TypeText(TextMeshProUGUI textComponent, string fullText)
+    IEnumerator TypeText(TextMeshProUGUI textComponent)
     {
         isAnimating = true;
         StartCoroutine(AnimateMonkey());
 
-        textComponent.text = "";
+        string fullText = textComponent.text;
+        textComponent.text = ""; // Clear the text at the start of the coroutine
 
         foreach (char letter in fullText)
         {
@@ -101,7 +110,6 @@ public class TypewriterEffect : MonoBehaviour
 
         textComponent1.text = "";
         textComponent2.text = "";
-        textComponent3.text = "";
 
         speechBubble.SetActive(false);
         closeButton.gameObject.SetActive(false);
@@ -117,17 +125,22 @@ public class TypewriterEffect : MonoBehaviour
             activeTypingCoroutine = null;
         }
 
-        textComponent1.text = "";
-        textComponent2.text = "";
+        textComponent1.gameObject.SetActive(false); // Ensure textComponent1 is hidden
+        textComponent2.gameObject.SetActive(false); // Ensure textComponent2 is hidden
 
         speechBubble.SetActive(true); // Ensure speech bubble appears
-        activeTypingCoroutine = StartCoroutine(TypeText(textComponent3, "Gefeliciteerd! Je hebt het eerste avontuur met gemak gehaald!"));
+        textComponent3.gameObject.SetActive(true); // Ensure textComponent3 is visible
+
+        // Set the full text for textComponent3
+        textComponent3.text = textComponent3FullText;
+
+        activeTypingCoroutine = StartCoroutine(TypeText(textComponent3));
         StartCoroutine(ShowCloseButtonAfterText3());
     }
 
     IEnumerator ShowCloseButtonAfterText3()
     {
-        yield return new WaitForSeconds(textComponent3.text.Length * typingSpeed);
+        yield return new WaitForSeconds(textComponent3FullText.Length * typingSpeed);
         closeButton.gameObject.SetActive(true);
     }
 
@@ -164,7 +177,6 @@ public class TypewriterEffect : MonoBehaviour
     {
         textComponent1.text = "";
         textComponent2.text = "";
-        textComponent3.text = "";
 
         if (hasClosedBeforeVideo)
         {
