@@ -8,6 +8,9 @@ public class SceneSwitcher : MonoBehaviour
     public Button backButton;
     public Button avontuurButton;
     public Button VoorTrajectKeuze;
+    public Button BehandelTrajectKeuze;
+    public Button NaTrajectKeuze;
+    public Button loginButton;
 
     void Start()
     {
@@ -19,6 +22,13 @@ public class SceneSwitcher : MonoBehaviour
             startButton.onClick.AddListener(() => LoadScene("TrajectMenu"));
             Debug.Log("Startknop gekoppeld aan TrajectMenu.");
         }
+
+        if (currentScene == "StartMenu" && loginButton != null)
+        {
+            loginButton.onClick.AddListener(() => LoadScene("InlogMenu"));
+            Debug.Log("Login knop gekoppeld aan StartMenu.");
+        }
+
         else if (currentScene == "TrajectMenu")
         {
             if (backButton != null)
@@ -31,6 +41,18 @@ public class SceneSwitcher : MonoBehaviour
             {
                 VoorTrajectKeuze.onClick.AddListener(() => LoadScene("VoorTrajectMap"));
                 Debug.Log("VoorTrajectKeuze knop gekoppeld aan VoorTrajectKeuze.");
+            }
+
+            if (BehandelTrajectKeuze != null)
+            {
+                BehandelTrajectKeuze.onClick.AddListener(() => LoadScene("BehandelTrajectMap"));
+                Debug.Log("BehandelTrajectKeuze knop gekoppeld aan BehandelTrajectScene.");
+            }
+
+            if (NaTrajectKeuze != null)
+            {
+                NaTrajectKeuze.onClick.AddListener(() => LoadScene("NaTrajectMap"));
+                Debug.Log("NaTrajectKeuze knop gekoppeld aan NaTrajectScene.");
             }
         }
         else if (currentScene == "VoorTrajectMap")
@@ -52,11 +74,29 @@ public class SceneSwitcher : MonoBehaviour
             backButton.onClick.AddListener(() => LoadScene("VoorTrajectMap"));
             Debug.Log("Terugknop gekoppeld aan VoorTrajectMap.");
         }
-    }
 
-    void LoadScene(string sceneName)
-    {
-        Debug.Log("Laden van scene: " + sceneName);
-        SceneManager.LoadScene(sceneName);
+        else if (currentScene == "BehandelTrajectMap")
+        {
+            if (backButton != null)
+            {
+                backButton.onClick.AddListener(() => LoadScene("TrajectMenu"));
+                Debug.Log("Terugknop gekoppeld aan TrajectMenu.");
+            }
+        }
+
+        else if (currentScene == "NaTrajectMap")
+        {
+            if (backButton != null)
+            {
+                backButton.onClick.AddListener(() => LoadScene("TrajectMenu"));
+                Debug.Log("Terugknop gekoppeld aan TrajectMenu.");
+            }
+        }
+
+        void LoadScene(string sceneName)
+        {
+            Debug.Log("Laden van scene: " + sceneName);
+            SceneManager.LoadScene(sceneName);
+        }
     }
 }

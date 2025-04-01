@@ -2708,6 +2708,9 @@ MonoBehaviour:
   backButton: {fileID: 1308575909}
   avontuurButton: {fileID: 0}
   VoorTrajectKeuze: {fileID: 0}
+  BehandelTrajectKeuze: {fileID: 0}
+  NaTrajectKeuze: {fileID: 0}
+  loginButton: {fileID: 0}
 --- !u!1 &1288472141
 GameObject:
   m_ObjectHideFlags: 0
@@ -3166,7 +3169,7 @@ MonoBehaviour:
   textComponent1: {fileID: 935055501}
   textComponent2: {fileID: 1425146179}
   textComponent3: {fileID: 1874540812}
-  typingSpeed: 0.07
+  typingSpeed: 0.075
   monkeyTransform: {fileID: 1288472142}
   bounceHeight: 5
   bounceSpeed: 15
