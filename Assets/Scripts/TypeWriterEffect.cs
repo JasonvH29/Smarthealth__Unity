@@ -181,7 +181,6 @@ public class TypewriterEffect : MonoBehaviour
         if (hasClosedBeforeVideo)
         {
             speechBubble.SetActive(true);
-            closeButton.gameObject.SetActive(true);
             ShowVideoCompletionText();
         }
     }
