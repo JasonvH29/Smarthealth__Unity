@@ -313,7 +313,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -6031522954101015158, guid: 7ac44d00ea726544ba19c5ebfc0d67d6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -481,7 +481,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 6654179815896912611, guid: 0a7ea84ed03a5e8418d90cc61eb15a68, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1294,7 +1294,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 5496996467046367236, guid: 421ae959788378a40b2408a59f6e4dd6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1758,7 +1758,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startButton: {fileID: 0}
   backButton: {fileID: 1411494210}
-  avontuurButton: {fileID: 0}
+  NextButton: {fileID: 0}
+  VTavontuurButton1: {fileID: 0}
+  VTavontuurButton2: {fileID: 0}
+  VTavontuurButton3: {fileID: 0}
+  BTavontuurButton1: {fileID: 1734525705}
+  BTavontuurButton2: {fileID: 1006450023}
+  BTavontuurButton3: {fileID: 1499338587}
+  NTavontuurButton1: {fileID: 0}
+  NTavontuurButton2: {fileID: 0}
   VoorTrajectKeuze: {fileID: 0}
   BehandelTrajectKeuze: {fileID: 0}
   NaTrajectKeuze: {fileID: 0}

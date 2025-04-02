@@ -1194,8 +1194,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startButton: {fileID: 0}
   backButton: {fileID: 1466471241}
-  avontuurButton: {fileID: 175708348}
+  VTavontuurButton1: {fileID: 175708348}
+  VTavontuurButton2: {fileID: 2055732145}
+  VTavontuurButton3: {fileID: 1596194877}
+  BTavontuurButton1: {fileID: 0}
+  BTavontuurButton2: {fileID: 0}
+  BTavontuurButton3: {fileID: 0}
+  NTavontuurButton1: {fileID: 0}
+  NTavontuurButton2: {fileID: 0}
   VoorTrajectKeuze: {fileID: 0}
+  BehandelTrajectKeuze: {fileID: 0}
+  NaTrajectKeuze: {fileID: 0}
+  loginButton: {fileID: 0}
 --- !u!1 &1354525946
 GameObject:
   m_ObjectHideFlags: 0

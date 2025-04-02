@@ -15,20 +15,41 @@ EditorBuildSettings:
     path: Assets/Scenes/InlogMenu.unity
     guid: 144307872cb938e419164133a412ec48
   - enabled: 1
+    path: Assets/Scenes/TrajectMenu.unity
+    guid: 919463483f1b46e419f826165fb9d7e7
+  - enabled: 1
     path: Assets/Scenes/VoorTrajectMap.unity
     guid: 67d977a2518018b49ac428a04a21baeb
   - enabled: 1
     path: Assets/Scenes/VoorTrajectAvontuur1.unity
     guid: 5a235cd075948e8498e6fbadd5693310
   - enabled: 1
-    path: Assets/Scenes/TrajectMenu.unity
-    guid: 919463483f1b46e419f826165fb9d7e7
+    path: Assets/Scenes/VoorTrajectAvontuur2.unity
+    guid: 101791afef01a21459e9cc9b9363e189
+  - enabled: 1
+    path: Assets/Scenes/VoorTrajectAvontuur3.unity
+    guid: bd5d0c24857fdaf4b9cfcc5182115306
   - enabled: 1
     path: Assets/Scenes/BehandelTrajectMap.unity
     guid: ab4f8d693420b3f42a93c9f224d438f2
   - enabled: 1
+    path: Assets/Scenes/BehandelTrajectAvontuur1.unity
+    guid: b15894fe346d67f44bec2363a8cae649
+  - enabled: 1
+    path: Assets/Scenes/BehandelTrajectAvontuur2.unity
+    guid: 994b733f56ccfd941a5a9115cb6a92c9
+  - enabled: 1
+    path: Assets/Scenes/BehandelTrajectAvontuur3.unity
+    guid: c8c055539dcbc1e43973bbf3f4a629c4
+  - enabled: 1
     path: Assets/Scenes/NaTrajectMap.unity
     guid: 184c7ddd78b9f8d469fde4ba42819eeb
+  - enabled: 1
+    path: Assets/Scenes/NaTrajectAvontuur1.unity
+    guid: 4ea3d483f5ba07f48ad943d1f6e3474c
+  - enabled: 1
+    path: Assets/Scenes/NaTrajectAvontuur2.unity
+    guid: 626aab4333ca8cb4a893a978718cdc0f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
   m_UseUCBPForAssetBundles: 0
