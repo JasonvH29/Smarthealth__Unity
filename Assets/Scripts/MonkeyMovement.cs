@@ -18,6 +18,18 @@ public class MonkeyMovement : MonoBehaviour
     private Vector2 movement;
     private Coroutine moveCoroutine;
 
+    // Variables for NaZorgInstructie1 interaction
+    public GameObject naZorgInstructie1; // Reference to NaZorgInstructie1 GameObject
+    public Button instructionButton1; // Reference to Instruction Button inside NaZorgInstructie1
+    public GameObject instructionPanel1; // Reference to Instruction Panel inside NaZorgInstructie1
+    public Button closeButton1; // Reference to Close Button inside Instruction Panel
+
+    // Variables for NaZorgInstructie2 interaction
+    public GameObject naZorgInstructie2; // Reference to NaZorgInstructie2 GameObject
+    public Button instructionButton2; // Reference to Instruction Button inside NaZorgInstructie2
+    public GameObject instructionPanel2; // Reference to Instruction Panel inside NaZorgInstructie2
+    public Button closeButton2; // Reference to Close Button inside Instruction Panel
+
     void Start()
     {
         AddButtonListeners(upButton, Vector2.up);
@@ -26,6 +38,42 @@ public class MonkeyMovement : MonoBehaviour
         AddButtonListeners(rightButton, Vector2.right);
 
         AddBorderToControlsBackground();
+
+        // Initialize NaZorgInstructie1
+        if (instructionPanel1 != null)
+        {
+            instructionPanel1.SetActive(false); // Ensure panel is initially hidden
+        }
+
+        if (instructionButton1 != null)
+        {
+            instructionButton1.gameObject.SetActive(false); // Ensure button is initially hidden
+            instructionButton1.onClick.AddListener(ShowInstructionPanel1);
+        }
+
+        if (closeButton1 != null)
+        {
+            closeButton1.gameObject.SetActive(false); // Ensure close button is initially hidden
+            closeButton1.onClick.AddListener(CloseInstructionPanel1);
+        }
+
+        // Initialize NaZorgInstructie2
+        if (instructionPanel2 != null)
+        {
+            instructionPanel2.SetActive(false); // Ensure panel is initially hidden
+        }
+
+        if (instructionButton2 != null)
+        {
+            instructionButton2.gameObject.SetActive(false); // Ensure button is initially hidden
+            instructionButton2.onClick.AddListener(ShowInstructionPanel2);
+        }
+
+        if (closeButton2 != null)
+        {
+            closeButton2.gameObject.SetActive(false); // Ensure close button is initially hidden
+            closeButton2.onClick.AddListener(CloseInstructionPanel2);
+        }
     }
 
     void Update()
@@ -41,7 +89,14 @@ public class MonkeyMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
             movement += Vector2.right;
 
+        if (monkeyImage.transform.position.y < 320)
+        {
+            movement += Vector2.up;
+        }
+
         MoveMonkey(movement * moveSpeed * Time.deltaTime);
+
+        CheckMonkeyProximity();
     }
 
     void AddButtonListeners(Button button, Vector2 direction)
@@ -106,6 +161,83 @@ public class MonkeyMovement : MonoBehaviour
             Outline outline = controlsBackground.gameObject.AddComponent<Outline>();
             outline.effectColor = Color.black; // Border color
             outline.effectDistance = new Vector2(5, -5);
+        }
+    }
+
+    void CheckMonkeyProximity()
+    {
+        if (naZorgInstructie1 != null && instructionButton1 != null)
+        {
+            float distance1 = Vector2.Distance(monkeyImage.anchoredPosition, naZorgInstructie1.GetComponent<RectTransform>().anchoredPosition);
+            if (distance1 < 50f) // Adjust the distance threshold as needed
+            {
+                instructionButton1.gameObject.SetActive(true);
+            }
+            else
+            {
+                instructionButton1.gameObject.SetActive(false);
+            }
+        }
+
+        if (naZorgInstructie2 != null && instructionButton2 != null)
+        {
+            float distance2 = Vector2.Distance(monkeyImage.anchoredPosition, naZorgInstructie2.GetComponent<RectTransform>().anchoredPosition);
+            if (distance2 < 50f) // Adjust the distance threshold as needed
+            {
+                instructionButton2.gameObject.SetActive(true);
+            }
+            else
+            {
+                instructionButton2.gameObject.SetActive(false);
+            }
+        }
+    }
+
+    void ShowInstructionPanel1()
+    {
+        if (instructionPanel1 != null)
+        {
+            instructionPanel1.SetActive(true);
+            if (closeButton1 != null)
+            {
+                closeButton1.gameObject.SetActive(true);
+            }
+        }
+    }
+
+    void CloseInstructionPanel1()
+    {
+        if (instructionPanel1 != null)
+        {
+            instructionPanel1.SetActive(false);
+            if (closeButton1 != null)
+            {
+                closeButton1.gameObject.SetActive(false);
+            }
+        }
+    }
+
+    void ShowInstructionPanel2()
+    {
+        if (instructionPanel2 != null)
+        {
+            instructionPanel2.SetActive(true);
+            if (closeButton2 != null)
+            {
+                closeButton2.gameObject.SetActive(true);
+            }
+        }
+    }
+
+    void CloseInstructionPanel2()
+    {
+        if (instructionPanel2 != null)
+        {
+            instructionPanel2.SetActive(false);
+            if (closeButton2 != null)
+            {
+                closeButton2.gameObject.SetActive(false);
+            }
         }
     }
 }

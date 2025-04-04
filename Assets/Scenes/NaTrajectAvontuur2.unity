@@ -1829,7 +1829,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startButton: {fileID: 0}
   backButton: {fileID: 1554758424}
-  NextButton: {fileID: 0}
+  NextButton: {fileID: 490152235}
   VTavontuurButton1: {fileID: 0}
   VTavontuurButton2: {fileID: 0}
   VTavontuurButton3: {fileID: 0}

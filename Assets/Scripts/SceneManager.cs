@@ -254,6 +254,21 @@ public class SceneSwitcher : MonoBehaviour
                 backButton.onClick.AddListener(() => LoadScene("NaTrajectMap"));
                 Debug.Log("Terugknop gekoppeld aan NaTrajectMap.");
             }
+
+            if (NextButton != null)
+            {
+                NextButton.onClick.AddListener(() => LoadScene("NaTrajectMonitoring"));
+                Debug.Log("Volgende knop gekoppeld aan NaTrajectMonitoring");
+            }
+        }
+
+        else if (currentScene == "NaTrajectMonitoring")
+        {
+            if (backButton != null)
+            {
+                backButton.onClick.AddListener(() => LoadScene("TrajectMenu"));
+                Debug.Log("Terugknop gekoppeld aan TrajectMenu");
+            }
         }
 
             void LoadScene(string sceneName)
