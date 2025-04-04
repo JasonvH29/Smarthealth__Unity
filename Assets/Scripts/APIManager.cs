@@ -1,12 +1,12 @@
-using UnityEngine;
+/*using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
 using System.Net;
-using Sysyem.IO;
+using System.IO;
 
 public class APIManager : MonoBehaviour
 {
-    public statix ApiManger()
+    public static ApiManger()
     {
         httpWebRequest request = (HttpWebRequest)WebRequest.Create("lu1project.azurewebsites.net");
         httpWebResponse response = (HttpWebResponse)request.GetResponse();
@@ -62,4 +62,4 @@ public class APIManager : MonoBehaviour
             }
         }
     }
-}
+}*/
