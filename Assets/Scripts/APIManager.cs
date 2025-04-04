@@ -13,6 +13,7 @@ public class APIManager : MonoBehaviour
         StreamReader reader = new StreamReader(response.GetResponseStream());
         string json = reader.ReadToEnd();
     }
+    request.ApiManager();
    
     private string baseUrl = "lu1project.azurewebsites.net";
 
