@@ -6,7 +6,7 @@ using System.IO;
 
 public class APIManager : MonoBehaviour
 {
-    public static ApiManger()
+    public static ApiManager()
     {
         httpWebRequest request = (HttpWebRequest)WebRequest.Create("lu1project.azurewebsites.net");
         httpWebResponse response = (HttpWebResponse)request.GetResponse();
@@ -63,4 +63,5 @@ public class APIManager : MonoBehaviour
             }
         }
     }
-}*/
+}
+*/
