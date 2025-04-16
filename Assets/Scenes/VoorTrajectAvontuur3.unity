@@ -812,10 +812,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Als je keelpijn hebt en je voelt dat je hals dik is, kan het zijn dat je
-    amandelen gezwollen zijn. Je kunt het merken als het moeilijk is om te slikken
-    of je voelt pijn als je praat. Soms kun je ook koorts hebben, en je kunt je moe
-    voelen. Als je deze dingen hebt, is het goed om het aan een volwassene te vertellen!
+  m_text: 'In dit voortraject heeft de huisarts je keel grondig onderzocht en verschillende
+    testen gedaan om te kijken hoe je amandelen zich gedragen. Als de huisarts de
+    resultaten heeft bekeken, kan hij of zij besluiten welk traject het beste voor
+    jou is. Dit kan betekenen dat je doorgaat met een behandeling, bijvoorbeeld medicijnen,
+    of dat er een andere stap nodig is, zoals een operatie om de amandelen te verwijderen. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -842,8 +843,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 11
+  m_fontSizeBase: 11
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4052,6 +4053,7 @@ MonoBehaviour:
   BehandelTrajectKeuze: {fileID: 0}
   NaTrajectKeuze: {fileID: 0}
   loginButton: {fileID: 0}
+  infoBtn: {fileID: 0}
 --- !u!114 &1960461311
 MonoBehaviour:
   m_ObjectHideFlags: 0
