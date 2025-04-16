@@ -19,6 +19,7 @@ public class SceneSwitcher : MonoBehaviour
     public Button BehandelTrajectKeuze;
     public Button NaTrajectKeuze;
     public Button loginButton;
+    public Button infoBtn;
 
     void Start()
     {
@@ -35,6 +36,20 @@ public class SceneSwitcher : MonoBehaviour
         {
             loginButton.onClick.AddListener(() => LoadScene("InlogMenu"));
             Debug.Log("Login knop gekoppeld aan StartMenu.");
+        }
+
+        if (currentScene == "StartMenu" && infoBtn != null)
+        {
+            infoBtn.onClick.AddListener(() => LoadScene("ExtraInfo"));
+            Debug.Log("Info knop gekoppeld aan ExtraInfo.");
+        }
+        else if (currentScene == "ExtraInfo")
+        {
+            if (backButton != null)
+            {
+                backButton.onClick.AddListener(() => LoadScene("StartMenu"));
+                Debug.Log("Terugknop gekoppeld aan StartMenu.");
+            }
         }
 
         else if (currentScene == "InlogMenu")
@@ -284,7 +299,7 @@ public class SceneSwitcher : MonoBehaviour
             }
         }
 
-            void LoadScene(string sceneName)
+        void LoadScene(string sceneName)
         {
             Debug.Log("Laden van scene: " + sceneName);
             SceneManager.LoadScene(sceneName);
