@@ -31,7 +31,7 @@ public class LoginManager : MonoBehaviour
     void CreateAccount()
     {
         string username = usernameInput.text.Trim();
-        string password = passwordInput.text;
+        string password = passwordInput.text; // Corrected this line
 
         if (username == "" || password == "")
         {
@@ -59,7 +59,7 @@ public class LoginManager : MonoBehaviour
             if (storedPassword == password)
             {
                 errorMessage.text = "Login succesvol!";
-                SceneManager.LoadScene("StartMenu");
+                SceneManager.LoadScene("AvatarSelectieMenu"); // Change to your avatar selection scene name
             }
             else
             {

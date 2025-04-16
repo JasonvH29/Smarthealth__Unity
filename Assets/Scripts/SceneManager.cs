@@ -37,7 +37,7 @@ public class SceneSwitcher : MonoBehaviour
             Debug.Log("Login knop gekoppeld aan StartMenu.");
         }
 
-        else if(currentScene == "InlogMenu")
+        else if (currentScene == "InlogMenu")
         {
             if (backButton != null)
             {
@@ -46,6 +46,19 @@ public class SceneSwitcher : MonoBehaviour
             }
         }
 
+        else if (currentScene == "AvatarSelectieMenu")
+        {
+            if (backButton != null)
+            {
+                backButton.onClick.AddListener(() => LoadScene("InlogMenu"));
+                Debug.Log("Terugknop gekoppeld aan InlogMenu.");
+            }
+            if (NextButton != null)
+            {
+                NextButton.onClick.AddListener(() => LoadScene("TrajectMenu"));
+                Debug.Log("Startknop gekoppeld aan TrajectMenu.");
+            }
+        }
         else if (currentScene == "TrajectMenu")
         {
             if (backButton != null)

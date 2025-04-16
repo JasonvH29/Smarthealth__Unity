@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/InlogMenu.unity
     guid: 144307872cb938e419164133a412ec48
   - enabled: 1
+    path: Assets/Scenes/AvatarSelectieMenu.unity
+    guid: 711782521cddd444a8c1c80a5e77bc0e
+  - enabled: 1
     path: Assets/Scenes/TrajectMenu.unity
     guid: 919463483f1b46e419f826165fb9d7e7
   - enabled: 1

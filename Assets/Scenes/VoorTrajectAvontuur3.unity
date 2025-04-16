@@ -1596,9 +1596,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 495119331}
-  audioClip1: {fileID: 8300000, guid: 2c89ce359bbc6ef4887bdfa95e52973c, type: 3}
+  audioClip1: {fileID: 8300000, guid: b7af4ac3602acc24092ca2f635cf1b99, type: 3}
   audioClip2: {fileID: 8300000, guid: ce5272e4cf6a1ec4fb8a21715e1f32ba, type: 3}
-  audioClip3: {fileID: 8300000, guid: 2c295ba288459fc41b3b082023c4b14c, type: 3}
+  audioClip3: {fileID: 8300000, guid: 2416eddf2eaea9343989ce137bd23132, type: 3}
 --- !u!82 &495119331
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2111,11 +2111,11 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 588543108}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 0c5cb59d8528c164cb27127376b77a7f, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 7820208fcd3da224089edeff39971084, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: 5980c7ca5d1ce0c4bbfd0afe1ab38501, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 9c63936350da58946a4897ce8f11febc, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
@@ -3477,7 +3477,7 @@ RectTransform:
   m_GameObject: {fileID: 1338916520}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.7799, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 610201702}
@@ -3507,7 +3507,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: 5980c7ca5d1ce0c4bbfd0afe1ab38501, type: 2}
+  m_Texture: {fileID: 8400000, guid: 9c63936350da58946a4897ce8f11febc, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -3631,7 +3631,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 68.3, y: -0.8}
+  m_AnchoredPosition: {x: 67.3, y: -1.4}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1804351763
@@ -3662,8 +3662,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Het ziet eruit dat je naar de huisarts moet! Geen probleem, want samen
-    gaan wij dit oplossen!
+  m_text: Het ziet er naar uit dat we nu gaan beslissen welk avontuur je aangaat!
+    De dokter gaat met jullie bespreken welk behandeltraject je gaat volgen.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3690,8 +3690,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 7
-  m_fontSizeBase: 7
+  m_fontSize: 6
+  m_fontSizeBase: 6
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3728,7 +3728,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 130.2186, w: -3.3824596}
+  m_margin: {x: -5.769516, y: 0, z: 119.160324, w: -3.3824596}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4178,7 +4178,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Goed gedaan! We zijn razendsnel door dit avontuur gegaan!
+  m_text: Goed gedaan! Laten we gauw doorgaan naar het volgende avontuur!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
